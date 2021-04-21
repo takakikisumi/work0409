@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <title>Memberprofile</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            
+        }
+
+        td {
+            border: 1px black solid;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="title">會員個人頁面</h2>
+
+    <button onclick="showWord()">show something</button>
+    <button onclick="changeColor()">change color</button>
+
+
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <td>name</td>
+            <td>job</td>
+            <td>age</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="name">
+            <td>paddy</td>
+            <td>kisumi</td>
+            <td>dio</td>
+          </tr>
+          <tr>
+            <td>engineer</td>
+            <td>designer</td>
+            <td>engineer</td>
+          </tr>
+          <tr id="age">
+            <td>26</td>
+            <td>26</td>
+            <td>18</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr>
+      <span>動態改變文字</span>
+    <br>
+      <input id="word" onchange="changeWord(event)" />
+      <div id="showWord">null</div>
+    </div>
+</body>
+<script>
+    const url = location.href; // location物件的 href是個屬性，先取得網址字串
+    if (url.indexOf("member") != -1) { //再來用去尋找網址列中是否有資料傳遞（QueryString）
+      const memberID = url.split("member/")[1]; //把.split想成一把次元刀，以member切，數量1陣列
+      document.write("你的會員ID是  " + memberID);
+    }
+
+    const showWord = () => {
+      $("h2").html('<input />')
+    }
+
+    const changeColor = () => {
+      console.log($("#name"));
+      $("#name td").css('background', 'red')
+    };
+
+    const changeWord = (e) => { //通常呼叫callback function時，會傳進一個值event通常會縮寫成evt or e，不過這個名稱是可以自己取的。
+      console.log(e.target); //e.target屬性則是永遠只向觸發事件的DOM物件
+      console.log($("#showWord"));
+      $("#showWord").html(e.target.value);
+      //取得showWord匹配元素的html內容，e.target.value顯示正確的值
+    };
+
+    const text = () => {
+      $("button").html('<input />') //取得button匹配元素的html input標籤內容
+    }
+  </script>
+  <!-- 
+  找時間要再細看
+  https://ithelp.ithome.com.tw/articles/10246411
+  https://ithelp.ithome.com.tw/articles/10095237
+  https://ithelp.ithome.com.tw/articles/10225692
+  https://hugh-program-learning-diary-js.medium.com/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A4%8E-javascript%E7%AF%87-javascript-%E7%B6%B2%E9%A0%81%E4%BA%8B%E4%BB%B6%E8%99%95%E7%90%86-2596dbad9bdc
+  https://www.w3schools.com/tags/ref_eventattributes.asp 
+  -->
+</html>

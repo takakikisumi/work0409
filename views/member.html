@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member</title>
+    <style>
+      body {
+        background-color: #f2f2f2;
+      }
+      input[type=text], select, textarea {
+        width: 100%; 
+        padding: 12px; 
+        border: 1px solid #ccc; 
+        border-radius: 4px; 
+        box-sizing: border-box; 
+        margin-top: 6px; 
+        margin-bottom: 16px; 
+        resize: vertical;
+      }
+
+      input[type=date], select, textarea {
+        width: 100%; 
+        padding: 12px; 
+        border: 1px solid #ccc; 
+        border-radius: 4px; 
+        box-sizing: border-box; 
+        margin-top: 6px; 
+        margin-bottom: 16px; 
+        resize: vertical;
+      }
+
+      input[type=password], select, textarea {
+        width: 100%; 
+        padding: 12px; 
+        border: 1px solid #ccc; 
+        border-radius: 4px; 
+        box-sizing: border-box; 
+        margin-top: 6px; 
+        margin-bottom: 16px; 
+        resize: vertical;
+      }
+      
+      input[type=submit] {
+        background-color: #5F9EA0;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      input[type=submit]:hover {
+        background-color: #008B8B;
+      }
+      
+      .container {
+        border-radius: 5px;
+        background-color: #D3D3D3;
+        padding: 20px;
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form>
+      
+          <label for="name">姓名</label>
+          <input type="text" id="name" name="name" placeholder="陳XX">
+
+          <form>
+              <label for="birthday">出生日期</label>
+              <input type="date" id="birthday" name="birthday">
+          </form>
+
+          <label for="gender">性別</label>
+          <select id="gender" name="gender">
+            <option value="male">男性</option>
+            <option value="female">女性</option>
+          </select>
+          
+          <label for="number">電話</label>
+          <input type="text" id="number" name="number" placeholder="請輸入號碼">
+
+          <label for="counties">縣市</label>
+          <select id="counties" name="counties">
+            <option value="taipei city">台北市</option>
+            <option value="new taipei city">新北市</option>
+          </select>
+
+          <label for="counties">區域</label>
+          <select id="area" name="area">
+            <option value="Xinyi District">信義區</option>
+            <option value="Wenshan District">文山區</option>
+          </select>
+
+          <label for="address">地址</label>
+          <input type="text" id="address" name="address" placeholder="請輸入地址">
+
+          <form>
+            <label for="address">設定密碼</label>
+            <input type="password" id="password" name="password" placeholder="請設定英文加數字">
+          </form>
+      
+          <label for="Feedback ">其他意見</label>
+          <textarea id="Feedback " name="Feedback " placeholder="歡迎提供回饋意見" style="height:200px"></textarea>
+      
+          <input onclick="location.href='memberprofile.html'" type="submit" value="送出">
+      
+        </form>
+      </div>
+    
+</body>
+</html>
